@@ -1,19 +1,21 @@
-function Similarity(set1=[], set3=[]){
-    let result1=[]
-    for(let i=0;i<set1.length;i++){
-        for(let j=0;j<set3.length;j++){
-            if(set1[i]==set3[j]){
-                result1.push(set1[i])
-            }
-            else continue
+function SymmetricDifference(set=[], set2=[]){
+    let result = []
+    let i,j
+    for(i =0;i<set.length;i++){
+        if(set2.indexOf(set[i])!=-1){
+            continue
+        }else{
+            result.push(set[i])
         }
     }
-    return result1
+    for(j=0;j<set2.length;j++){
+        if(set.indexOf(set2[j])!=-1){
+            continue
+        }else{
+            result.push(set2[j])
+        }
+    }
+    return result
 }
-function symmetricDifference(set=[],set2=[]){
-    let check = Similarity(set,set2)
-    let result2 = []
-    let k = 0
-    return result2
-}
-console.log(symmetricDifference([1,2,3],[1,2,4]))
+console.log(SymmetricDifference([1,2,3],[1,2,4]))
+   
