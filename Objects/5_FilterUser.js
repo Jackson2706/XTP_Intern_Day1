@@ -30,4 +30,10 @@ function filterUser(user){
     }
     return result
 }
-console.log(filterUser(user))
+function viewUser(object=[]){
+    let i
+    for(i=0;i<object.length;i++){
+        console.log("Name : " + object[i].name +"\nAge : " + object[i].age+"\nIsStatus : " + object[i].isStatus)
+    }
+}
+viewUser(filterUser(user))
